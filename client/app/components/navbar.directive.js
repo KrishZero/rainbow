@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('rainbowAngular')
+    .module('rainbowApp')
     .directive('acmeNavbar', acmeNavbar);
 
   /** @ngInject */
