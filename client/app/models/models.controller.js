@@ -2,10 +2,15 @@
 	'use strict';
 
 	var ModelCtrl = function ModelCtrl($scope, RainbowAPI) {
-		$scope.title = 'example';
+		$scope.products = [];
+
+		$scope.getClass = function (pClass) {
+			return pClass.toLowerCase().replace(':', ' ');
+		};
 
 		RainbowAPI.getProducts().then(function (data) {
 			console.log(data);
+			$scope.products = data;
 		});
 	};
 
