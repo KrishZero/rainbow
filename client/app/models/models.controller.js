@@ -14,6 +14,10 @@
 		});
 	};
 
+	var ModelsDetail = function ModelsDetail() {
+	};
+
 	angular.module('rainbowApp')
-		.controller('ModelCtrl', ['$scope','RainbowAPI', ModelCtrl]);
+		.controller('ModelCtrl', ['$scope','RainbowAPI', ModelCtrl])
+		.controller('ModelDetailCtrl', ['$scope', 'RainbowAPI', ModelsDetail]);
 })();
