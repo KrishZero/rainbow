@@ -2,9 +2,6 @@
 'use strict';
 
 	angular.module('rainbowApp', [
-		'ngCookies',
-		'ngResource',
-		'ngSanitize',
 		'ui.router'
 	])
 	.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {

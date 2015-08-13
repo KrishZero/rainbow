@@ -15,7 +15,7 @@
 <div id="Container" class="container-mixitup" ng-repeat="p in products">
 	<div class="mix {{ getClass(p.type) }}" >
 		<div class="thumbnail">
-		<img class="img-responsive" src="images/thumbnail/AllAmericanclub.jpg" alt="...">
+			<img class="img-responsive" src="http://rainbow.agenciaparadoja.com/{{ p._links.thumbnail.href }}" alt="...">
 			<div class="caption">
 				<a class="thumbnail-title" ui-sref="modelosDetail({ id: p.id })">
 					<h3>{{ p.name }}</h3>
