@@ -13,7 +13,7 @@
       scope: {
           creationDate: '='
       },
-      controller: NavbarController,
+      controller: FooterController,
       controllerAs: 'vm',
       bindToController: true
     };
