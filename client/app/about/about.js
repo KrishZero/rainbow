@@ -4,9 +4,9 @@
 angular.module('rainbowApp')
 	.config(function ($stateProvider) {
 		$stateProvider
-			.state('about', {
+			.state('nosotros', {
 				url: '/nosotros',
-				templateUrl: 'app/models/about.view.html',
+				templateUrl: 'app/about/about.view.html',
 				controller: 'AboutCtrl'
 			})
 	});
