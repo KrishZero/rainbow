@@ -1,26 +1,4 @@
-<div class="navbar navbar-default navbar-container navbar-fixed-top" ng-controller="NavbarCtrl">
-  <div class="container">
-    <div class="navbar-header">
-      <button class="navbar-toggle" type="button" ng-click="isCollapsed = !isCollapsed">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a href="/" class="navbar-brand">rainbow</a>
-    </div>
-    <div collapse="isCollapsed" class="navbar-collapse collapse" id="navbar-main">
-      <ul class="nav navbar-nav">
-        <li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">
-            <a ng-href="{{item.link}}">{{item.title}}</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-
-<nav class="navbar navbar-default navbar-container navbar-fixed-top" ng-controller="NavbarCtrl">
+<nav class="navbar navbar-default navbar-container navbar-fixed-top">
   <div class="phone-number">
     <div class="container">
       <div class="row">
@@ -44,14 +22,13 @@
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <v class="navbar-header">
-      <button class="navbar-toggle" type="button" ng-click="isCollapsed = !isCollapsed">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" ng-href=""/>
+      <a class="navbar-brand" ng-href="index.html">
         <img class="img-responsive" src="assets/images/rainbow-juegos-infantiles-logo.png" alt="">
       </a>
     </div>
