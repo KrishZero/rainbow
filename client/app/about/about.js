@@ -8,7 +8,7 @@ angular.module('rainbowApp')
 				url: '/nosotros',
 				templateUrl: 'app/about/about.view.html',
 				controller: 'AboutCtrl'
-			})
+			});
 	});
 
 })();
