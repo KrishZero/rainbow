@@ -1,5 +1,5 @@
-'use strict';
 (function(){
+	'use strict';
 	var residential = angular.element('#btnResidencial');
 	var subSections = angular.element('.subContainer-buttons');
 
@@ -7,13 +7,13 @@
 		subSections.toggle('slow');
 	};
 
-	angular.element('.map--rainbow').addClass('scrolloff'); 
-    
+	angular.element('.map--rainbow').addClass('scrolloff');
+
     angular.element('.map-container').on('click', function () {
-        angular.element('.map--rainbow').removeClass('scrolloff'); 
+        angular.element('.map--rainbow').removeClass('scrolloff');
     });
 
-    angular.element(".map--rainbow").mouseleave(function () {
+    angular.element('.map--rainbow').mouseleave(function () {
         angular.element('.map--rainbow').addClass('scrolloff'); 
     });
 
@@ -21,22 +21,22 @@
 
 
 	angular.element('#lightSlider').lightSlider({
-	    gallery: true,
-	    item: 1,
-	    slideWidth: 700,
-	    loop:true,
-	    slideMargin: 0,
-	    thumbItem: 4
+		gallery: true,
+		item: 1,
+		slideWidth: 700,
+		loop:true,
+		slideMargin: 0,
+		thumbItem: 4
 	});
 
     angular.element('#Container').mixItUp();
 
-	angular.element("#contactform").submit(function (event) {
+	angular.element('#contactform').submit(function (event) {
         var SELF = angular.element(this);
 
         // Disable the form temporarily
-        angular.element(this).find("input[type=submit]").attr({disabled:true});
-        
+        angular.element(this).find('input[type=submit]').attr({disabled:true});
+
         // Send the ajax request
         angular.element.ajax({
             url: 'contact.php',
@@ -44,15 +44,15 @@
             data: angular.element(this).serialize(),
             success: function (data) {
                 // If the email was sent "successfully" reset the form and tell the user.
-                if (data == "OK") {
-                    alert("El correo se envio correctamente.");
-                    $(SELF).trigger("reset");
+                if (data === 'OK') {
+                    //alert('El correo se envio correctamente.');
+                    $(SELF).trigger('reset');
                 } else {
                     // If there was an error, tell the user what happened.
-                    alert(data); // Nice, uh?
+                    //alert(data); // Nice, uh?
                 }
 
-                angular.element(SELF).find("input[type=submit]").removeAttr("disabled");
+                angular.element(SELF).find('input[type=submit]').removeAttr('disabled');
             }
         });
 
@@ -60,6 +60,4 @@
         event.preventDefault();
         return false;
     });
-
-	
-});
+})();

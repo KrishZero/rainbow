@@ -8,7 +8,7 @@ angular.module('rainbowApp')
 				url: '/contacto',
 				templateUrl: 'app/contact/contact.view.html',
 				controller: 'ContactCtrl'
-			})
+			});
 	});
 
 })();
