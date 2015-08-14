@@ -9,8 +9,18 @@
 		};
 
 		RainbowAPI.getProducts().then(function (data) {
-			/*console.log(data)*/;
 			$scope.products = data;
+			console.log(data);
+
+			var residential = angular.element('#btnResidencial');
+			var subSections = angular.element('.subContainer-buttons');
+
+			var onResidentialClick = function() {
+				subSections.toggle('slow');
+			};
+
+			residential.on('click', onResidentialClick);
+			angular.element('#Container').mixItUp();
 		});
 	};
 
