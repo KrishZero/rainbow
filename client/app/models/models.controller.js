@@ -9,6 +9,7 @@
 		};
 
 		RainbowAPI.getProducts().then(function (data) {
+			console.log(data);
 			$scope.products = data;
 
 			var residential = angular.element('#btnResidencial');
@@ -24,18 +25,30 @@
 		});
 	};
 
-	var ModelsDetail = function ModelsDetail() {
-		angular.element('#lightSlider').lightSlider({
-			gallery: true,
-			item: 1,
-			slideWidth: 700,
-			loop:true,
-			slideMargin: 0,
-			thumbItem: 4
+	var ModelsDetail = function ModelsDetail($scope, $stateParams, RainbowAPI) {
+		RainbowAPI.getProducts().then(function (data) {
+			data.forEach(function (p) {
+				if (p.id === $stateParams.id) {
+					$scope.product = p;
+					return;
+				}
+			});
+
+			console.log($scope.product);
+
+			angular.element('#lightSlider').lightSlider({
+				gallery: true,
+				item: 1,
+				slideWidth: 700,
+				loop:true,
+				slideMargin: 0,
+				thumbItem: 4
+			});
 		});
+
 	};
 
 	angular.module('rainbowApp')
 		.controller('ModelCtrl', ['$scope','RainbowAPI', ModelCtrl])
-		.controller('ModelDetailCtrl', ['$scope', 'RainbowAPI', ModelsDetail]);
+		.controller('ModelDetailCtrl', ['$scope', '$stateParams', 'RainbowAPI', ModelsDetail]);
 })();
