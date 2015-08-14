@@ -2,7 +2,8 @@
 'use strict';
 
 	angular.module('rainbowApp', [
-		'ui.router'
+		'ui.router',
+		'angular-flexslider'
 	])
 	.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 		$urlRouterProvider.otherwise('/');
