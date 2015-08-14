@@ -10,5 +10,4 @@ angular.module('rainbowApp')
 				controller: 'MainCtrl'
 			});
 	});
-
 })();

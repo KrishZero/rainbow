@@ -9,4 +9,14 @@
 				$scope.awesomeThings = awesomeThings;
 			});
 		});
+
+		angular.element('.map--rainbow').addClass('scrolloff'); 
+    
+	    angular.element('.map-container').on('click', function () {
+	        $('.map--rainbow').removeClass('scrolloff'); 
+	    });
+
+	    angular.element(".map--rainbow").mouseleave(function () {
+	        angular.element('.map--rainbow').addClass('scrolloff'); 
+	    });
 })();

@@ -12,8 +12,8 @@
 	</div>
 </div>
 
-<div id="Container" class="container-mixitup" ng-repeat="p in products">
-	<div class="mix {{ getClass(p.type) }}" >
+<div id="Container" class="container-mixitup" >
+	<div class="col-md-3 mix {{ getClass(p.type) }}" ng-repeat="p in products">
 		<div class="thumbnail">
 			<img class="img-responsive" src="http://rainbow.agenciaparadoja.com/{{ p._links.thumbnail.href }}" alt="...">
 			<div class="caption">
