@@ -28,7 +28,7 @@
 	var ModelsDetail = function ModelsDetail($scope, $stateParams, RainbowAPI) {
 		RainbowAPI.getProducts().then(function (data) {
 			data.forEach(function (p) {
-				if (p.id === $stateParams.id) {
+				if (!p && p.id === $stateParams.id) {
 					$scope.product = p;
 				}
 			});
