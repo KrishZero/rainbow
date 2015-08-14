@@ -10,7 +10,6 @@
 
 		RainbowAPI.getProducts().then(function (data) {
 			$scope.products = data;
-			console.log(data);
 
 			var residential = angular.element('#btnResidencial');
 			var subSections = angular.element('.subContainer-buttons');
@@ -21,6 +20,7 @@
 
 			residential.on('click', onResidentialClick);
 			angular.element('#Container').mixItUp();
+			residential.click();
 		});
 	};
 
