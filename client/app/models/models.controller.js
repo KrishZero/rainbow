@@ -30,11 +30,8 @@
 			data.forEach(function (p) {
 				if (p.id === $stateParams.id) {
 					$scope.product = p;
-					return;
 				}
 			});
-
-			console.log($scope.product);
 
 			angular.element('#lightSlider').lightSlider({
 				gallery: true,
