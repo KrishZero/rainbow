@@ -26,10 +26,13 @@
 	};
 
 	var ModelsDetail = function ModelsDetail($scope, $stateParams, RainbowAPI) {
+		$scope.sProd = [{ id: '1' }];
+
 		RainbowAPI.getProducts().then(function (data) {
 			data.forEach(function (p) {
 				if (p.id === $stateParams.id) {
 					$scope.product = p;
+					console.log(p);
 				}
 			});
 		});
