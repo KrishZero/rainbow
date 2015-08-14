@@ -28,18 +28,9 @@
 	var ModelsDetail = function ModelsDetail($scope, $stateParams, RainbowAPI) {
 		RainbowAPI.getProducts().then(function (data) {
 			data.forEach(function (p) {
-				if (!p && p.id === $stateParams.id) {
+				if (p.id === $stateParams.id) {
 					$scope.product = p;
 				}
-			});
-
-			angular.element('#lightSlider').lightSlider({
-				gallery: true,
-				item: 1,
-				slideWidth: 700,
-				loop:true,
-				slideMargin: 0,
-				thumbItem: 4
 			});
 		});
 
