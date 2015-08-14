@@ -19,6 +19,7 @@
 
 	residential.on('click', onResidentialClick);
 
+
 	angular.element('#lightSlider').lightSlider({
 	    gallery: true,
 	    item: 1,
