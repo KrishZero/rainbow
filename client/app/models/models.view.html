@@ -7,7 +7,7 @@
 		<button class="filter" data-filter=".comerciales">Comerciales</button>
 	</div>
 	<div class="subContainer-buttons">
-		<button class="filter filter-subcategory" data-filter=".playhouse">PlayHouse</button>
+		<button class="filter filter-subcategory" data-filter=".clubhouse">ClubHouse</button>
 		<button class="filter filter-subcategory" data-filter=".castle">Castle</button>
 	</div>
 </div>
@@ -20,7 +20,7 @@
 				<a class="thumbnail-title" ui-sref="modelosDetail({ id: p.id })">
 					<h3>{{ p.name }}</h3>
 				</a>
-				<a class="thumbnail-category" href="#">Play House</a>
+				<a ui-sref="modelosDetail({ id: p.id })" class="thumbnail-category" href="#">Play House</a>
 			</div>
 		</div>
 	</div>
