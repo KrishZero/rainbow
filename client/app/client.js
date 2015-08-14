@@ -1,27 +1,25 @@
 'use strict';
-
-$(function(){
-	var residential = $('#btnResidencial');
-	var subSections = $('.subContainer-buttons');
+(function(){
+	var residential = angular.element('#btnResidencial');
+	var subSections = angular.element('.subContainer-buttons');
 
 	var onResidentialClick = function() {
 		subSections.toggle('slow');
 	};
 
-	$('.map--rainbow').addClass('scrolloff'); 
+	angular.element('.map--rainbow').addClass('scrolloff'); 
     
-    $('.map-container').on('click', function () {
-        $('.map--rainbow').removeClass('scrolloff'); 
+    angular.element('.map-container').on('click', function () {
+        angular.element('.map--rainbow').removeClass('scrolloff'); 
     });
 
-    $(".map--rainbow").mouseleave(function () {
-        $('.map--rainbow').addClass('scrolloff'); 
+    angular.element(".map--rainbow").mouseleave(function () {
+        angular.element('.map--rainbow').addClass('scrolloff'); 
     });
 
 	residential.on('click', onResidentialClick);
 
-
-	$('#lightSlider').lightSlider({
+	angular.element('#lightSlider').lightSlider({
 	    gallery: true,
 	    item: 1,
 	    slideWidth: 700,
@@ -30,17 +28,19 @@ $(function(){
 	    thumbItem: 4
 	});
 
-	$("#contactform").submit(function (event) {
-        var SELF = $(this);
+    angular.element('#Container').mixItUp();
+
+	angular.element("#contactform").submit(function (event) {
+        var SELF = angular.element(this);
 
         // Disable the form temporarily
-        $(this).find("input[type=submit]").attr({disabled:true});
+        angular.element(this).find("input[type=submit]").attr({disabled:true});
         
         // Send the ajax request
-        $.ajax({
+        angular.element.ajax({
             url: 'contact.php',
             type: 'POST',
-            data: $(this).serialize(),
+            data: angular.element(this).serialize(),
             success: function (data) {
                 // If the email was sent "successfully" reset the form and tell the user.
                 if (data == "OK") {
@@ -51,7 +51,7 @@ $(function(){
                     alert(data); // Nice, uh?
                 }
 
-                $(SELF).find("input[type=submit]").removeAttr("disabled");
+                angular.element(SELF).find("input[type=submit]").removeAttr("disabled");
             }
         });
 
