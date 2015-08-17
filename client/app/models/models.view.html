@@ -2,9 +2,9 @@
 	<h2 class="text-center">Elige entre nuestras categorías de modelos Rainbow</h2>
 
 	<div class="container-buttons">
-		<button class="filter" data-filter="all">Todos</button>
-		<button class="filter" id="btnResidencial" data-filter=".residenciales">Residenciales</button>
-		<button class="filter" data-filter=".comerciales">Comerciales</button>
+		<button class="filter" id="btnAll" data-filter="all">Todos</button>
+		<button class="filter" id="btnResidencial" data-filter=".residential">Residentials</button>
+		<button class="filter" data-filter=".commercial">Commercial</button>
 	</div>
 	<div class="subContainer-buttons">
 		<button class="filter filter-subcategory" data-filter=".clubhouse">ClubHouse</button>
@@ -20,7 +20,7 @@
 				<a class="thumbnail-title" ui-sref="modelosDetail({ id: p.id })">
 					<h3>{{ p.name }}</h3>
 				</a>
-				<a ui-sref="modelosDetail({ id: p.id })" class="thumbnail-category" href="#">Play House</a>
+				<a ui-sref="modelosDetail({ id: p.id })" class="thumbnail-category" href="#">{{ getClass(p.type) }}</a>
 			</div>
 		</div>
 	</div>
