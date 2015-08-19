@@ -27,11 +27,15 @@
 	var ModelsDetail = function ModelsDetail($scope, $stateParams, RainbowAPI) {
 		$scope.sProd = [{ id: '1' }];
 
+		$scope.convertType = function (type) {
+			if (!type) { return ''; }
+			return type.replace(':', ' ');
+		};
+
 		RainbowAPI.getProducts().then(function (data) {
 			data.forEach(function (p) {
 				if (p.id === $stateParams.id) {
 					$scope.product = p;
-					console.log(p);
 				}
 			});
 		});

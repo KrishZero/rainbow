@@ -1,58 +1,57 @@
-      <div class="product-detail-container">
-        <div class="container">
-          <div class="row">
+<div class="product-detail-container">
+    <div class="container">
+        <div class="row">
             <div class="col-md-8">
-              <div class="demo">
-				<flex-slider slide="s in product._links.images track by $index">
-					<li>
-						<img ng-src="http://rainbow.agenciaparadoja.com{{ s.href }}">
-					</li>
-				</flex-slider>
-              </div>
+                <div class="demo">
+                    <flex-slider slide="s in product._links.images track by $index">
+                        <li>
+                            <img ng-src="http://rainbow.agenciaparadoja.com{{ s.href }}">
+                        </li>
+                    </flex-slider>
+                </div>
             </div>
-
             <div class="col-md-4">
-              <ul class="cotization-list">
-                <li class="cotization-item">
-                  <h3>Tipo de Juego</h3>
-                  <p>Play House</p>
-                </li>
-                <li class="cotization-item">
-                  <h3>Edades</h3>
-                  <p>2-5 años</p>
-                </li>
-                <li class="cotization-item">
-                  <h3>Altura</h3>
-                  <p>2.9m</p>
-                </li>
-                <li class="cotization-item">
-                  <h3>Largo</h3>
-                  <p>4.11m</p>
-                </li>
-                <li class="cotization-item">
-                  <h3>Ancho</h3>
-                  <p>2.57m</p>
-                </li>
-                <li class="cotization-item">
-                  <h3>Capacidad</h3>
-                  <p>10</p>
-                </li>
+                <ul class="cotization-list">
+                    <li class="cotization-item">
+                        <h3>Tipo de Juego</h3>
+                        <p>{{ convertType(product.type); }}</p>
+                    </li>
+                    <li class="cotization-item">
+                        <h3>Edades</h3>
+                        <p>{{ product.min_age }}-{{ product.max_age }} años</p>
+                    </li>
+                    <li class="cotization-item">
+                        <h3>Altura</h3>
+                        <p>{{ product.height }}</p>
+                    </li>
+                    <li class="cotization-item">
+                        <h3>Largo</h3>
+                        <p>{{ product.depth }}</p>
+                    </li>
+                    <li class="cotization-item">
+                        <h3>Ancho</h3>
+                        <p>{{ product.width }}</p>
+                    </li>
+                    <li class="cotization-item">
+                        <h3>Capacidad</h3>
+                        <p>{{ product.capacity }}</p>
+                    </li>
 
-                 <li class="cotization-item">
-                  <a href="#">Cotizar</a>
-                </li>
-              </ul>
+                    <li class="cotization-item">
+                        <a href="#">Cotizar</a>
+                    </li>
+                </ul>
             </div>
-          </div>
         </div>
-      </div>
+    </div>
+</div>
 
-      <div class="product-features-container">
-        <div class="container">
-          <div class="row">
+<div class="product-features-container">
+    <div class="container">
+        <div class="row">
             <div class="col-md-8">
-            <h3>Features</h3>
-            <!--div class="features-content">
+                <h3>Features</h3>
+                <!--div class="features-content">
               <p>
                 Somos la marca más confiable en juegos de madera y más de 500,000 sistemas instalados nos respaldan. Orgullosamente nos dedicamos a la fabricación de juegos de madera en Estados Unidos con la fábrica de juegos más grande del mundo situado en el corazón de América.
               </p>
@@ -64,115 +63,115 @@
               </ul>
             </div-->
 
-            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-              <h2>Preguntas Frecuentes</h2>
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingOne">
-                  <h4 class="panel-title">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <h2>Preguntas Frecuentes</h2>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <h4 class="panel-title">
                     <a role="button" class="accordion-title" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                       <i class="fa fa-plus"></i> Vivo lejos ¿puedo llevarlo hasta mi rancho?
                     </a>
                   </h4>
-                </div>
-                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                  <div class="panel-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                  </div>
-                </div>
-              </div>
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingTwo">
-                  <h4 class="panel-title">
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                            <h4 class="panel-title">
                     <a  class="collapsed accordion-title" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                       <i class="fa fa-plus"></i> ¿Tengo que instalarlo yo?
                     </a>
                   </h4>
-                </div>
-                <div id="collapseTwo"  class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                  <div class="panel-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                  </div>
-                </div>
-              </div>
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingThree">
-                  <h4 class="panel-title">
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                            <div class="panel-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                            <h4 class="panel-title">
                     <a class="collapsed accordion-title" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                       <i class="fa fa-plus"></i> ¿Dan mantenimiento a los juegos?
                     </a>
                   </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                            <div class="panel-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                  <div class="panel-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
-          <div class="col-md-4">
-            <aside class="sponsors-container">
-              <div class="col-md-4 text-center">
-                <a href="#"><i class="fa fa-long-arrow-left"></i></i></a>
-                <p>Atrás</p>
-              </div>
-              <div class="col-md-4 text-center">
-                <a href="#"><i class="fa fa-share-alt"></i></a>
-                <p >Compartir</p>
-              </div>
-              <div class="col-md-4 text-center">
-                <a href="#"><i class="fa fa-long-arrow-right"></i></a>
-                <p>Siguiente</p>
-              </div>
-            </aside>
-            <ul class="sponsors-list">
-              <li>
-                <a href="#">
-                  <img class="img-responsive text-center" src="assets/images/100-redwood.png" alt="">
-                </a>
-              </li>
+            <div class="col-md-4">
+                <aside class="sponsors-container">
+                    <div class="col-md-4 text-center">
+                        <a href="#"><i class="fa fa-long-arrow-left"></i></i></a>
+                        <p>Atrás</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <a href="#"><i class="fa fa-share-alt"></i></a>
+                        <p>Compartir</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <a href="#"><i class="fa fa-long-arrow-right"></i></a>
+                        <p>Siguiente</p>
+                    </div>
+                </aside>
+                <ul class="sponsors-list">
+                    <li>
+                        <a href="#">
+                            <img class="img-responsive text-center" src="assets/images/100-redwood.png" alt="">
+                        </a>
+                    </li>
 
-              <li>
-                <a href="#">
-                  <img class="img-responsive text-center" src="assets/images/residential-use.png" alt="">
-                </a>
-              </li>
+                    <li>
+                        <a href="#">
+                            <img class="img-responsive text-center" src="assets/images/residential-use.png" alt="">
+                        </a>
+                    </li>
 
-              <li>
-                <a href="#">
-                  <img class="img-responsive text-center" src="assets/images/manufacturated-usa.png" alt="">
-                </a>
-              </li>
-            </ul>
-          </div>
-          </div>
+                    <li>
+                        <a href="#">
+                            <img class="img-responsive text-center" src="assets/images/manufacturated-usa.png" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
+    </div>
+</div>
 
-       <div class="related-products-section">
-        <div class="container related-products-container">
-          <h2 class="related-products-title text-center">Productos Relacionados</h2>
-          <div class="row">
+<div class="related-products-section">
+    <div class="container related-products-container">
+        <h2 class="related-products-title text-center">Productos Relacionados</h2>
+        <div class="row">
             <div class="col-md-2 col-md-offset-1">
-              <div class="thumbnail">
-                <a href="http://bugy.mx/gimnasiosparaparques.html" target="_blank">
-                  <img src="assets/images/gimnasios.jpg" alt="...">
-                  <div class="caption related-caption">
-                    <h3>Gimnasios</h3>
-                  </div>
-                </a>  
-              </div>
+                <div class="thumbnail">
+                    <a href="http://bugy.mx/gimnasiosparaparques.html" target="_blank">
+                        <img src="assets/images/gimnasios.jpg" alt="...">
+                        <div class="caption related-caption">
+                            <h3>Gimnasios</h3>
+                        </div>
+                    </a>
+                </div>
             </div>
             <div class="col-md-2">
-              <div class="thumbnail">
-                <a href="http://bugy.mx/bancasparaparques.html" target="_blank">
-                  <img src="assets/images/mobiliario-urbano.jpg" alt="...">
-                  <div class="caption related-caption">
-                    <h3>Mobiliario Urbano</h3>
-                  </div>
-                </a>
-              </div>
+                <div class="thumbnail">
+                    <a href="http://bugy.mx/bancasparaparques.html" target="_blank">
+                        <img src="assets/images/mobiliario-urbano.jpg" alt="...">
+                        <div class="caption related-caption">
+                            <h3>Mobiliario Urbano</h3>
+                        </div>
+                    </a>
+                </div>
             </div>
-          </div>
         </div>
-  </div>
+    </div>
+</div>
