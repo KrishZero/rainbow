@@ -33,11 +33,17 @@
 		};
 
 		RainbowAPI.getProducts().then(function (data) {
-			data.forEach(function (p) {
-				if (p.id === $stateParams.id) {
-					$scope.product = p;
+			for (var i = 0; i < data.length; i++) {
+				if (data[i].id === $stateParams.id) {
+					$scope.preview = data[i-1];
+					$scope.product = data[i];
+					if (i === data.length) {
+						$scope.last = data[0];
+					} else {
+						$scope.last = data[i+1];
+					}
 				}
-			});
+			}
 		});
 
 	};

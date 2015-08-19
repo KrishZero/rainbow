@@ -51,18 +51,6 @@
         <div class="row">
             <div class="col-md-8">
                 <h3>Features</h3>
-                <!--div class="features-content">
-              <p>
-                Somos la marca más confiable en juegos de madera y más de 500,000 sistemas instalados nos respaldan. Orgullosamente nos dedicamos a la fabricación de juegos de madera en Estados Unidos con la fábrica de juegos más grande del mundo situado en el corazón de América.
-              </p>
-              <ul class="features-list">
-                <li><i class="fa fa-check"></i> Prácticos y adaptables</li>
-                <li><i class="fa fa-check"></i> Diversión Asegurada</li>
-                <li> <i class="fa fa-check"></i> Seguridad ante todo</li>
-                <li> <i class="fa fa-check"></i> Marca Internacional</li>
-              </ul>
-            </div-->
-
                 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                     <h2>Preguntas Frecuentes</h2>
                     <div class="panel panel-default">
@@ -112,7 +100,7 @@
             <div class="col-md-4">
                 <aside class="sponsors-container">
                     <div class="col-md-4 text-center">
-                        <a href="#"><i class="fa fa-long-arrow-left"></i></i></a>
+						<a ui-sref="modelosDetail({ id: preview.id })"><i class="fa fa-long-arrow-left"></i></i></a>
                         <p>Atrás</p>
                     </div>
                     <div class="col-md-4 text-center">
@@ -120,7 +108,7 @@
                         <p>Compartir</p>
                     </div>
                     <div class="col-md-4 text-center">
-                        <a href="#"><i class="fa fa-long-arrow-right"></i></a>
+                        <a ui-sref="modelosDetail({ id: last.id })"><i class="fa fa-long-arrow-right"></i></a>
                         <p>Siguiente</p>
                     </div>
                 </aside>
