@@ -67,8 +67,12 @@
 		RainbowAPI.getProducts().then(function (data) {
 			for (var i = 0; i < data.length; i++) {
 				if (data[i].id === $stateParams.id) {
-					$scope.preview = data[i-1];
 					$scope.product = data[i];
+					if (i === 0) {
+						$scope.last = data[data.length];
+					} else {
+						$scope.last = data[i-1];
+					}
 					if (i === data.length) {
 						$scope.last = data[0];
 					} else {
