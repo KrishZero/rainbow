@@ -1,12 +1,32 @@
 (function () {
 'use strict';
 
-	angular.module('rainbowApp')
-		.controller('ContactCtrl', function ($scope, $http) {
-			$scope.awesomeThings = [];
+	var ContactCtrl = function ($scope, $http, CartService) {
+		$scope.products = CartService.items;
 
-			$http.get('/api/things').success(function(awesomeThings) {
-				$scope.awesomeThings = awesomeThings;
+		$scope.remove = function (id) {
+			CartService.remove(id);
+		};
+
+		$scope.contact = function () {
+			var data = [];
+			CartService.items.forEach(function (item) {
+				data.push(item.name);
 			});
-		});
+
+			var request = $http({
+				method: 'POST',
+				url   : 'contact.php',
+				data  : data
+			});
+			request.then(function (response) {
+				console.log(response);
+			}, function (error) {
+				console.log(error);
+			});
+		};
+	};
+
+	angular.module('rainbowApp')
+		.controller('ContactCtrl', ['$scope', '$http', 'CartService', ContactCtrl]);
 })();

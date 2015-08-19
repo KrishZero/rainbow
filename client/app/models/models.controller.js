@@ -1,6 +1,33 @@
 (function () {
 	'use strict';
 
+	var CartService = function () {
+		var cartService = {
+			items: []
+		};
+		cartService.push = function (item) {
+			var isDuplicated = false;
+			cartService.items.forEach(function (data) {
+				if (data.id === item.id) {
+					isDuplicated = true;
+					return;
+				}
+			});
+			if (!isDuplicated) {
+				cartService.items.push(item);
+			}
+		};
+		cartService.remove = function (id) {
+			for (var i = 0; i < cartService.items.length; i++) {
+				if (cartService.items[i].id === id) {
+					cartService.items.splice(i, 1);
+					return;
+				}
+			}
+		};
+		return cartService;
+	};
+
 	var ModelCtrl = function ModelCtrl($scope, RainbowAPI) {
 		$scope.products = [];
 
@@ -24,12 +51,17 @@
 		});
 	};
 
-	var ModelsDetail = function ModelsDetail($scope, $stateParams, RainbowAPI) {
+	var ModelsDetail = function ModelsDetail($scope, $stateParams, RainbowAPI, CartService) {
 		$scope.sProd = [{ id: '1' }];
 
 		$scope.convertType = function (type) {
 			if (!type) { return ''; }
 			return type.replace(':', ' ');
+		};
+
+		$scope.quote = function () {
+			CartService.items.push($scope.product);
+			alert('Agregado');
 		};
 
 		RainbowAPI.getProducts().then(function (data) {
@@ -49,6 +81,7 @@
 	};
 
 	angular.module('rainbowApp')
+		.factory('CartService', [CartService])
 		.controller('ModelCtrl', ['$scope','RainbowAPI', ModelCtrl])
-		.controller('ModelDetailCtrl', ['$scope', '$stateParams', 'RainbowAPI', ModelsDetail]);
+		.controller('ModelDetailCtrl', ['$scope', '$stateParams', 'RainbowAPI', 'CartService', ModelsDetail]);
 })();
