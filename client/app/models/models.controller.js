@@ -9,7 +9,6 @@
 		};
 
 		RainbowAPI.getProducts().then(function (data) {
-			console.log(data);
 			$scope.products = data;
 
 			var residential = angular.element('#btnResidencial');
