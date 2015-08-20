@@ -47,14 +47,14 @@
 				subSections.toggle('slow');
 			};
 
-			var onCommercialClick = function() {
+			/*var onCommercialClick = function() {
 				subSections.css('display', 'none');
 				itemProduct.each(function(a, b) { 
 					if (angular.element(b).hasClass('commercial')) { 
 						console.log( angular.element(itemProduct.find('commercial')))  
 					}  
-				});
-			};
+				}); 
+			};*/
 
 			residential.on('click', onResidentialClick);
 			commercial.on('click', onCommercialClick);
@@ -73,7 +73,10 @@
 
 		$scope.quote = function () {
 			CartService.items.push($scope.product);
-			alert('Agregado');
+			var message = angular.element('.message-successful');
+			message.show(300).delay(6000).hide(200);
+			console.log(message);
+			//alert('Agregado');
 		};
 
 		RainbowAPI.getProducts().then(function (data) {
