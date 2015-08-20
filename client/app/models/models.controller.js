@@ -40,14 +40,26 @@
 
 			var residential = angular.element('#btnResidencial');
 			var subSections = angular.element('.subContainer-buttons');
+			var commercial = angular.element('#btnCommercial');
+			var itemProduct = angular.element('.itemProduct');
 
 			var onResidentialClick = function() {
 				subSections.toggle('slow');
 			};
 
+			var onCommercialClick = function() {
+				subSections.css('display', 'none');
+				itemProduct.each(function(a, b) { 
+					if (angular.element(b).hasClass('commercial')) { 
+						console.log( angular.element(itemProduct.find('commercial')))  
+					}  
+				});
+			};
+
 			residential.on('click', onResidentialClick);
+			commercial.on('click', onCommercialClick);
 			angular.element('#Container').mixItUp();
-			residential.click();
+			//residential.click();
 		});
 	};
 

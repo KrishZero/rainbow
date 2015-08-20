@@ -1,10 +1,11 @@
-<div class="controls">
+<div class="container-fluid">
+	<div class="controls">
 	<h2 class="text-center">Elige entre nuestras categorías de modelos Rainbow</h2>
 
-	<div class="container-buttons">
+	<div class="container-buttons" >
 		<button class="filter" id="btnAll" data-filter="all">Todos</button>
 		<button class="filter" id="btnResidencial" data-filter=".residential">Residentials</button>
-		<button class="filter" data-filter=".commercial">Commercial</button>
+		<button id="btnCommercial" class="filter" data-filter=".commercial">Commercial</button>
 	</div>
 	<div class="subContainer-buttons">
 		<button class="filter filter-subcategory" data-filter=".clubhouse">ClubHouse</button>
@@ -13,7 +14,7 @@
 </div>
 
 <div id="Container" >
-	<div class="col-md-3 mix {{ getClass(p.type) }}" ng-repeat="p in products">
+	<div class="itemProduct col-md-3 mix {{ getClass(p.type) }}" ng-repeat="p in products">
 		<div class="thumbnail">
 			<img class="img-responsive" ng-src="http://rainbow.agenciaparadoja.com/{{ p._links.thumbnail.href }}" alt="...">
 			<div class="caption">
@@ -27,4 +28,5 @@
 
 	<div class="gap"></div>
 	<div class="gap"></div>
+</div>
 </div>
