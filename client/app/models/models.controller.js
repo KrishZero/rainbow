@@ -57,7 +57,7 @@
 			};*/
 
 			residential.on('click', onResidentialClick);
-			commercial.on('click', onCommercialClick);
+			//commercial.on('click', onCommercialClick);
 			angular.element('#Container').mixItUp();
 			//residential.click();
 		});
