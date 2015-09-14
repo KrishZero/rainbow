@@ -1,30 +1,49 @@
 <div class="controls">
 	<h2 class="text-center">Elige entre nuestras categorías de modelos Rainbow</h2>
 
-	<div class="container-buttons">
-		<button class="filter" ng-click="filterElem('all');" id="btnAll">Todos</button>
-		<button class="filter" ng-click="slow();" id="btnResidencial">Residentials</button>
-		<button class="filter" ng-click="filterElem('commercial');">Commercial</button>
+=======
+<div class="container-fluid no-padding">
+	<div class="models-container_title">
+	    <div class="container">
+	      	<div class="col-md-12">
+	        	<div class="col-md-6">
+	         		<h2>Models</h2>
+	        	</div>
+	        	<div class="col-md-6">
+	          		<h3 class="text-right">Let your imagination Soar</h3>
+	        	</div>
+	      	</div>
+	    </div>
 	</div>
-	<div class="subContainer-buttons">
-		<button ng-click="filterElem('residential:clubhouse');" class="filter filter-subcategory" data-filter=".clubhouse">ClubHouse</button>
-		<button ng-click="filterElem('residential:castle');" class="filter filter-subcategory" data-filter=".castle">Castle</button>
-	</div>
-</div>
+	<div class="controls">
+		<h2 class="text-center">Elige entre nuestras categorías de modelos Rainbow</h2>
 
-<div id="Container" >
-	<div class="col-md-3 mix {{ getClass(p.type) }}" ng-repeat="p in products">
-		<div class="thumbnail">
-			<img class="img-responsive" ng-src="http://rainbow.agenciaparadoja.com/{{ p._links.thumbnail.href }}" alt="...">
-			<div class="caption">
-				<a class="thumbnail-title" ui-sref="modelosDetail({ id: p.id })">
-					<h3>{{ p.name }}</h3>
-				</a>
-				<a ui-sref="modelosDetail({ id: p.id })" class="thumbnail-category" href="#">{{ getClass(p.type) }}</a>
-			</div>
+		<div class="container-buttons">
+			<button class="filter" ng-click="filterElem('all');" id="btnAll">Todos</button>
+			<button class="filter" ng-click="slow();" id="btnResidencial">Residentials</button>
+			<button class="filter" ng-click="filterElem('commercial');">Commercial</button>
+		</div>
+
+		<div class="subContainer-buttons">
+			<button ng-click="filterElem('residential:clubhouse');" class="filter filter-subcategory" data-filter=".clubhouse">ClubHouse</button>
+			<button ng-click="filterElem('residential:castle');" class="filter filter-subcategory" data-filter=".castle">Castle</button>
 		</div>
 	</div>
 
-	<div class="gap"></div>
-	<div class="gap"></div>
+	<div id="Container" >
+		<div class="itemProduct col-md-3 mix {{ getClass(p.type) }}" ng-repeat="p in products">
+			<div class="thumbnail">
+				<img class="img-responsive" ng-src="http://rainbow.agenciaparadoja.com/{{ p._links.thumbnail.href }}" alt="...">
+				<div class="caption">
+					<a class="thumbnail-title" ui-sref="modelosDetail({ id: p.id })">
+						<h3>{{ p.name }}</h3>
+					</a>
+					<a ui-sref="modelosDetail({ id: p.id })" class="thumbnail-category" href="#">{{ getClass(p.type) }}</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="gap"></div>
+		<div class="gap"></div>
+	</div>
 </div>

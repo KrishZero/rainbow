@@ -34,7 +34,7 @@
 		$scope.productsCache = [];
 
 		$scope.filterElem = function (type) {
-			if (type == 'all') {
+			if (type === 'all') {
 				$scope.products = $scope.productsCache;
 			} else {
 				tmpProducts = [];
@@ -76,6 +76,10 @@
 
 		$scope.quote = function() {
 			CartService.items.push($scope.product);
+			var message = angular.element('.message-successful');
+			message.show(300).delay(6000).hide(200);
+			console.log(message);
+			//alert('Agregado');
 		};
 
 		RainbowAPI.getProducts().then(function(data) {
