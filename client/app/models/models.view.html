@@ -2,13 +2,13 @@
 	<h2 class="text-center">Elige entre nuestras categorías de modelos Rainbow</h2>
 
 	<div class="container-buttons">
-		<button class="filter" id="btnAll" data-filter="all">Todos</button>
-		<button class="filter" id="btnResidencial" data-filter=".residential">Residentials</button>
-		<button class="filter" data-filter=".commercial">Commercial</button>
+		<button class="filter" ng-click="filterElem('all');" id="btnAll">Todos</button>
+		<button class="filter" ng-click="slow();" id="btnResidencial">Residentials</button>
+		<button class="filter" ng-click="filterElem('commercial');">Commercial</button>
 	</div>
 	<div class="subContainer-buttons">
-		<button class="filter filter-subcategory" data-filter=".clubhouse">ClubHouse</button>
-		<button class="filter filter-subcategory" data-filter=".castle">Castle</button>
+		<button ng-click="filterElem('residential:clubhouse');" class="filter filter-subcategory" data-filter=".clubhouse">ClubHouse</button>
+		<button ng-click="filterElem('residential:castle');" class="filter filter-subcategory" data-filter=".castle">Castle</button>
 	</div>
 </div>
 
